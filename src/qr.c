@@ -7,16 +7,10 @@ int main(int argc, char** argv){
 		printf("Error opening file!\n");
 		return 1; // Exit with an error code
 	}
-	const int size=21;
-	const int cellSize=10;
-	fprintf(file,"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"%d\" height=\"%d\" viewBox=\"0 0 %d %d\">\n",size*cellSize,size*cellSize,size*cellSize,size*cellSize);
-	fprintf(file,"  <g id=\"a\">\n");
-	fprintf(file,"    <rect width=\"%d\" height=\"%d\"/>\n",cellSize*7,cellSize*7);
-	fprintf(file,"    <rect x=\"%d\" y=\"%d\" width=\"%d\" height=\"%d\" fill=\"#FFF\"/>\n",cellSize,cellSize,cellSize*5,cellSize*5);
-	fprintf(file,"    <rect x=\"%d\" y=\"%d\" width=\"%d\" height=\"%d\"/>\n",cellSize*2,cellSize*2,cellSize*3,cellSize*3);
-	fprintf(file,"  </g>\n");
-	fprintf(file,"  <use href=\"#a\" x=\"%d\"/>\n",cellSize*14);
-	fprintf(file,"  <use href=\"#a\" y=\"%d\"/>\n",cellSize*14);
+	fprintf(file,"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"210\" height=\"210\" viewBox=\"0 0 210 210\">");
+	fprintf(file,"<path fill-rule=\"evenodd\" d=\"M0 0h70v70H0m10-60h50v50H10m10-40h30v30H20\" id=\"a\"");
+	fprintf(file,"\t<use href=\"#a\" x=\"140\"/>\n");
+	fprintf(file,"\t<use href=\"#a\" y=\"140\"/>\n");
 	fprintf(file,"</svg>\n");
 	fclose(file);
 
